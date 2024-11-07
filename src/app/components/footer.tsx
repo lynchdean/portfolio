@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export function Footer() {
     return (
         <footer className="footer items-center p-4">
