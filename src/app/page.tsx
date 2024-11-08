@@ -16,10 +16,9 @@ export default function Home() {
                     <div className="max-w-3xl">
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">Dean Lynch</h1>
                         <h2 className="text-2xl md:text-5xl font-bold">Software Engineer</h2>
-                        <p className="text-md md:text-lg pt-4">I am a software engineer with a passion for full stack
-                            development.
+                        <p className="text-md md:text-lg pt-4">I am a software engineer based in Dublin, Ireland
+                            with a passion for full stack development.
                             I have experience with a variety of technologies including React, Node.js, and Python.
-                            I am always looking to learn new things and improve my skills.
                         </p>
                         <p className="text-md md:text-lg font-bold py-4">
                             I am currently looking for new opportunities. If you would like to get in touch, please
