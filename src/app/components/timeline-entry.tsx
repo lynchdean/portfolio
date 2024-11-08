@@ -4,9 +4,10 @@ interface TimelineEntryProps {
     title: string;
     location: string;
     description: Array<string>;
+    isLast?: boolean;
 }
 
-export function TimelineEntry({ year, company, title, location, description = [] }: TimelineEntryProps) {
+export function TimelineEntry({ year, company, title, location, description = [], isLast = false}: TimelineEntryProps) {
     return (
         <li>
             <div className="timeline-start md:text-end me-4 mb-auto">
@@ -35,7 +36,7 @@ export function TimelineEntry({ year, company, title, location, description = []
                     ))}
                 </ul>
             </div>
-            <hr/>
+            {!isLast && <hr />}
         </li>
     )
 }

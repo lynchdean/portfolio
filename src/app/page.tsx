@@ -33,18 +33,21 @@ export default function Home() {
                           title={entry.title}
                           location={entry.location}
                           description={entry.description}
+                          isLast={index === experience.length - 1}
                       />
                   ))}
               </ul>
           </div>
 
-          <div className="container mx-auto pb-8">
+          <div className="container mx-auto pb-8 bg-ne">
               <SectionHeading heading="Skills:"/>
-              <SkillGrid title="Languages" skills={["Python", "Java", "JavaScript", "TypeScript"]}/>
-              <SkillGrid title="Frameworks"
-                         skills={["Django", "Flask", "React", "Next.js", "Tailwind CSS", "Bootstrap"]}/>
-              <SkillGrid title="Tools"
-                         skills={["Git", "Selenium", "Jenkins", "Jira", "Docker", "AWS", "SQL", "Linux", "Windows"]}/>
+              <div className="rounded-2xl bg-neutral-100 p-4 pb-8">
+                  <SkillGrid title="Languages" skills={["Python", "Java", "JavaScript", "TypeScript"]}/>
+                  <SkillGrid title="Frameworks"
+                             skills={["Django", "Flask", "React", "Next.js", "Tailwind CSS", "Bootstrap"]}/>
+                  <SkillGrid title="Tools"
+                             skills={["Git", "Selenium", "Jenkins", "Jira", "Docker", "AWS", "SQL", "Linux", "Windows"]}/>
+              </div>
           </div>
 
           <div className="container mx-auto pb-8">

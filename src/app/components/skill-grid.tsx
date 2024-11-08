@@ -6,7 +6,7 @@ interface SkillGridProps {
 export function SkillGrid({ title, skills }: SkillGridProps) {
     return (
         <div>
-            <div className="divider">{title}</div>
+            <div className="divider text-neutral">{title}</div>
             <div className="grid grid-cols-6 gap-6">
                 {skills.map((skill) => (
                     <div key={skill} className="stats shadow">
