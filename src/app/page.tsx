@@ -23,7 +23,7 @@ export default function Home() {
               </div>
           </div>
 
-          <div className="container mx-auto pb-8">
+          <div className="container mx-auto">
               <SectionHeading heading="Experience:"/>
               <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                   {experience.map((entry, index) => (
@@ -34,6 +34,7 @@ export default function Home() {
                           title={entry.title}
                           location={entry.location}
                           description={entry.description}
+                          isFirst={index === 0}
                           isLast={index === experience.length - 1}
                       />
                   ))}
@@ -42,7 +43,7 @@ export default function Home() {
 
           <div className="container mx-auto pb-8 bg-ne">
               <SectionHeading heading="Skills:"/>
-              <div className="rounded-2xl bg-neutral-100 p-4 pb-8">
+              <div className="rounded-2xl bg-base-200 p-4 pb-8">
                   {skills.map((section, index) => (
                       <SkillGrid key={index} title={section.title} skills={section.skills}/>
                   ))}
