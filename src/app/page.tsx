@@ -16,6 +16,8 @@ export default function Home() {
                     <div className="max-w-3xl">
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">Dean Lynch</h1>
                         <h2 className="text-2xl md:text-5xl font-bold">Software Engineer</h2>
+                        <h2 className="text-lg md:text-2xl font-bold">BSc. Computer Applications & Software
+                            Engineering</h2>
                         <p className="text-md md:text-lg pt-4">I am a software engineer based in Dublin, Ireland
                             with a passion for full stack development.
                             I have experience with a variety of technologies including React, Node.js, and Python.
@@ -24,12 +26,21 @@ export default function Home() {
                             I am currently looking for new opportunities. If you would like to get in touch, please
                             feel free to reach out to me on LinkedIn.
                         </p>
-                        <a href="https://www.linkedin.com/in/deanlynch97/" target="_blank" className="btn me-4">
-                            LinkedIn
-                        </a>
-                        <a href="https://www.github.com/lynchdean" target="_blank" className="btn">
-                            Github
-                        </a>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <a href="https://www.linkedin.com/in/deanlynch97/" target="_blank" className="btn">
+                                LinkedIn
+                            </a>
+                            <a href="https://www.github.com/lynchdean" target="_blank" className="btn">
+                                Github
+                            </a>
+                            <a href="https://pizzapool.app" target="_blank" className="btn">
+                                pizzapool
+                            </a>
+                            <a href="https://apps.garmin.com/developer/ebe40baf-9d4c-4fde-b40c-b75cf3be799e/apps"
+                               target="_blank" className="btn">
+                                Garmin CIQ Apps
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
