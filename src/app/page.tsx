@@ -7,18 +7,30 @@ import {experience} from "@/../data/experience.js";
 import {skills} from "@/../data/skills.js";
 import {projects} from "@/../data/projects.js";
 
+
 export default function Home() {
     return (
         <div>
             <div className="hero min-h-80 bg-gradient-to-br from-slate-500 to-fuchsia-300">
-                <div className="hero-content text-slate-200 p-24">
-                    <div className="max-w-lg">
-                        <h1 className="text-7xl font-bold">Dean Lynch</h1>
-                        <h2 className="text-5xl font-bold">Software Engineer</h2>
-                        <p className="text-lg pt-4">I am a software engineer with a passion for full stack development.
+                <div className="hero-content text-slate-200 p-16">
+                    <div className="max-w-3xl">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">Dean Lynch</h1>
+                        <h2 className="text-2xl md:text-5xl font-bold">Software Engineer</h2>
+                        <p className="text-md md:text-lg pt-4">I am a software engineer with a passion for full stack
+                            development.
                             I have experience with a variety of technologies including React, Node.js, and Python.
                             I am always looking to learn new things and improve my skills.
                         </p>
+                        <p className="text-md md:text-lg font-bold py-4">
+                            I am currently looking for new opportunities. If you would like to get in touch, please
+                            feel free to reach out to me on LinkedIn.
+                        </p>
+                        <a href="https://www.linkedin.com/in/deanlynch97/" target="_blank" className="btn me-4">
+                            LinkedIn
+                        </a>
+                        <a href="https://www.github.com/lynchdean" target="_blank" className="btn">
+                            Github
+                        </a>
                     </div>
                 </div>
             </div>
