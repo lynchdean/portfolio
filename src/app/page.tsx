@@ -4,6 +4,8 @@ import {SectionHeading} from "@/app/components/section-heading";
 import {TimelineEntry} from "@/app/components/timeline-entry";
 
 import { experience } from "@/../data/experience.js";
+import { skills } from "@/../data/skills.js";
+import { projects } from "@/../data/projects.js";
 
 export default function Home() {
   return (
@@ -20,7 +22,6 @@ export default function Home() {
                   </div>
               </div>
           </div>
-
 
           <div className="container mx-auto pb-8">
               <SectionHeading heading="Experience:"/>
@@ -42,29 +43,24 @@ export default function Home() {
           <div className="container mx-auto pb-8 bg-ne">
               <SectionHeading heading="Skills:"/>
               <div className="rounded-2xl bg-neutral-100 p-4 pb-8">
-                  <SkillGrid title="Languages" skills={["Python", "Java", "JavaScript", "TypeScript"]}/>
-                  <SkillGrid title="Frameworks"
-                             skills={["Django", "Flask", "React", "Next.js", "Tailwind CSS", "Bootstrap"]}/>
-                  <SkillGrid title="Tools"
-                             skills={["Git", "Selenium", "Jenkins", "Jira", "Docker", "AWS", "SQL", "Linux", "Windows"]}/>
+                  {skills.map((section, index) => (
+                      <SkillGrid key={index} title={section.title} skills={section.skills}/>
+                  ))}
               </div>
           </div>
 
           <div className="container mx-auto pb-8">
               <SectionHeading heading="Projects:"/>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <ProjectCard title="pizzapool" github="lynchdean/pizzapool"
-                               desc={["A carpool-style group ordering web app.", "Used by one of the most popular run clubs in Dublin."]}
-                               tech={["Python", "Django"]}/>
-                  <ProjectCard title="Mild Watch Face" github="lynchdean/MildWatchFace "
-                               desc={["Garmin watch face for Mild Activity Run CLub."]} tech={["MonkeyC"]}/>
-                  <ProjectCard title="Dean's Simple Watch Face" github="lynchdean/DeansSimpleWatchFace"
-                               desc={["A simple data-rich watch face for Garmin devices."]} tech={["MonkeyC"]}/>
-                  <ProjectCard title="Portfolio" github="lynchdean/portfolio"
-                               desc={["Personal portfolio website. (you are here)"]}
-                               tech={["React", "Next.js", "Tailwind CSS"]}/>
-                  <ProjectCard title="BirdWatch Fingal" github="lynchdean/birdwatch-fingal"
-                               desc={["Website for BirdWatchIreland Fingal branch."]} tech={["React", "Bootstrap"]}/>
+                  {projects.map((project, index) => (
+                      <ProjectCard
+                          key={index}
+                          title={project.title}
+                          github={project.github}
+                          desc={project.desc}
+                          tech={project.tech}
+                      />
+                  ))}
               </div>
           </div>
       </div>
