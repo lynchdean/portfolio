@@ -1,11 +1,17 @@
+// Components
 import {SkillGrid} from "@/app/components/skill-grid";
 import {ProjectCard} from "@/app/components/project-card";
 import {SectionHeading} from "@/app/components/section-heading";
 import {TimelineEntry} from "@/app/components/timeline-entry";
 
+// Data
+import {hero} from "@/../data/hero.js";
+import {links} from "@/../data/links.js";
 import {experience} from "@/../data/experience.js";
 import {skills} from "@/../data/skills.js";
 import {projects} from "@/../data/projects.js";
+import {hobbies} from "@/../data/hobbies.js";
+import {cats} from "@/../data/cats.js";
 
 
 export default function Home() {
@@ -14,32 +20,17 @@ export default function Home() {
             <div className="hero min-h-80 bg-gradient-to-br from-slate-500 to-fuchsia-300">
                 <div className="hero-content text-slate-200 p-16">
                     <div className="max-w-3xl">
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">Dean Lynch</h1>
-                        <h2 className="text-2xl md:text-5xl font-bold">Software Engineer</h2>
-                        <h2 className="text-lg md:text-2xl font-bold">BSc. Computer Applications & Software
-                            Engineering</h2>
-                        <p className="text-md md:text-lg pt-4">I am a software engineer based in Dublin, Ireland
-                            with a passion for full stack development.
-                            I have experience with a variety of technologies including React, Node.js, and Python.
-                        </p>
-                        <p className="text-md md:text-lg font-bold py-4">
-                            I am currently looking for new opportunities. If you would like to get in touch, please
-                            feel free to reach out to me on LinkedIn.
-                        </p>
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">{hero.name}</h1>
+                        <h2 className="text-2xl md:text-5xl font-bold">{hero.title}</h2>
+                        <h2 className="text-lg md:text-2xl font-bold">{hero.degree}</h2>
+                        <p className="text-md md:text-lg pt-4">{hero.description1}</p>
+                        <p className="text-md md:text-lg font-bold py-4">{hero.description2}</p>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <a href="https://www.linkedin.com/in/deanlynch97/" target="_blank" className="btn">
-                                LinkedIn
-                            </a>
-                            <a href="https://www.github.com/lynchdean" target="_blank" className="btn">
-                                Github
-                            </a>
-                            <a href="https://pizzapool.app" target="_blank" className="btn">
-                                pizzapool
-                            </a>
-                            <a href="https://apps.garmin.com/developer/ebe40baf-9d4c-4fde-b40c-b75cf3be799e/apps"
-                               target="_blank" className="btn">
-                                Garmin CIQ Apps
-                            </a>
+                            {links.map((link, index) => (
+                                <a key={index} href={link.url} target="_blank" className="btn">
+                                    {link.title}
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -83,6 +74,34 @@ export default function Home() {
                             desc={project.desc}
                             tech={project.tech}
                         />
+                    ))}
+                </div>
+            </div>
+
+            <div className="container px-4 mx-auto pb-8">
+                <SectionHeading heading="Hobbies:"/>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {hobbies.map((hobby, index) => (
+                        <div key={index} className="card bg-base-200 shadow-xl">
+                            <div className="card-body">
+                                <h2 className="card-title">{hobby.title}</h2>
+                                <p>{hobby.description}</p>
+                            </div>
+                            <figure>
+                                <img src={hobby.image} alt={hobby.title}/>
+                            </figure>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="container px-4 mx-auto pb-8">
+                <SectionHeading heading="Cat Tax:"/>
+                <div className="carousel carousel-center bg-neutral rounded-box w-full space-x-4 p-4">
+                    {cats.map((cat, index) => (
+                        <div key={index} className="carousel-item w-1/2">
+                            <img src={cat.image} className="rounded-box" alt="Cat picture"/>
+                        </div>
                     ))}
                 </div>
             </div>
