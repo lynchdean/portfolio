@@ -17,20 +17,26 @@ import {cats} from "@/../data/cats.js";
 export default function Home() {
     return (
         <div>
-            <div className="hero min-h-80 bg-gradient-to-br from-slate-500 to-fuchsia-300">
-                <div className="hero-content text-slate-200 p-16">
-                    <div className="max-w-3xl">
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">{hero.name}</h1>
-                        <h2 className="text-2xl md:text-5xl font-bold">{hero.title}</h2>
-                        <h2 className="text-lg md:text-2xl font-bold">{hero.degree}</h2>
-                        <p className="text-md md:text-lg pt-4">{hero.description1}</p>
-                        <p className="text-md md:text-lg font-bold py-4">{hero.description2}</p>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {links.map((link, index) => (
-                                <a key={index} href={link.url} target="_blank" className="btn">
-                                    {link.title}
-                                </a>
-                            ))}
+            <div className="hero min-h-80 bg-base-300">
+                <div className="bg-[radial-gradient(circle_at_50%_55%,violet_0%,transparent_40%)]">
+                    <div className="bg-[radial-gradient(circle_at_65%_55%,lime_0%,transparent_22%)]">
+                        <div className="bg-[radial-gradient(circle_at_58%_40%,cyan_0%,transparent_35%)]">
+                            <div className="hero-content p-16 ">
+                                <div className="max-w-3xl">
+                                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">{hero.name}</h1>
+                                    <h2 className="text-2xl md:text-5xl font-bold">{hero.title}</h2>
+                                    <h2 className="text-lg md:text-2xl font-bold">{hero.degree}</h2>
+                                    <p className="text-md md:text-lg pt-4">{hero.description1}</p>
+                                    <p className="text-md md:text-lg font-bold py-4">{hero.description2}</p>
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        {links.map((link, index) => (
+                                            <a key={index} href={link.url} target="_blank" className="btn">
+                                                {link.title}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
