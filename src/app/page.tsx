@@ -17,11 +17,11 @@ import {cats} from "@/../data/cats.js";
 export default function Home() {
     return (
         <div>
-            <div className="hero min-h-80 bg-base-300">
+            <div className="hero min-h-80 bg-neutral-content">
                 <div className="bg-[radial-gradient(circle_at_50%_55%,violet_0%,transparent_40%)]">
                     <div className="bg-[radial-gradient(circle_at_65%_55%,lime_0%,transparent_28%)]">
                         <div className="bg-[radial-gradient(circle_at_58%_40%,cyan_0%,transparent_35%)]">
-                            <div className="hero-content p-16 ">
+                            <div className="hero-content p-16 text-neutral">
                                 <div className="max-w-3xl">
                                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">{hero.name}</h1>
                                     <h2 className="text-2xl md:text-5xl font-bold">{hero.title}</h2>
