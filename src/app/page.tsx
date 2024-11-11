@@ -3,21 +3,19 @@ import {SkillGrid} from "@/app/components/skill-grid";
 import {ProjectCard} from "@/app/components/project-card";
 import {SectionHeading} from "@/app/components/section-heading";
 import {TimelineEntry} from "@/app/components/timeline-entry";
-
 // Data
 import {hero} from "@/../data/hero.js";
-import {links} from "@/../data/links.js";
 import {experience} from "@/../data/experience.js";
 import {skills} from "@/../data/skills.js";
 import {projects} from "@/../data/projects.js";
 import {hobbies} from "@/../data/hobbies.js";
-import {cats} from "@/../data/cats.js";
 
 
 export default function Home() {
     return (
         <div>
             <div className="hero min-h-80 bg-neutral-content">
+
                 <div className="bg-[radial-gradient(circle_at_50%_55%,violet_0%,transparent_40%)]">
                     <div className="bg-[radial-gradient(circle_at_65%_55%,lime_0%,transparent_28%)]">
                         <div className="bg-[radial-gradient(circle_at_58%_40%,cyan_0%,transparent_35%)]">
@@ -28,13 +26,13 @@ export default function Home() {
                                     <h2 className="text-lg md:text-2xl font-bold">{hero.degree}</h2>
                                     <p className="text-md md:text-lg pt-4">{hero.description1}</p>
                                     <p className="text-md md:text-lg font-bold py-4">{hero.description2}</p>
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                        {links.map((link, index) => (
-                                            <a key={index} href={link.url} target="_blank" className="btn">
-                                                {link.title}
-                                            </a>
-                                        ))}
-                                    </div>
+                                    {/*<div className="grid grid-cols-2 md:grid-cols-4 gap-4">*/}
+                                    {/*    {links.map((link, index) => (*/}
+                                    {/*        <a key={index} href={link.url} target="_blank" className="btn">*/}
+                                    {/*            {link.title}*/}
+                                    {/*        </a>*/}
+                                    {/*    ))}*/}
+                                    {/*</div>*/}
                                 </div>
                             </div>
                         </div>
@@ -96,17 +94,6 @@ export default function Home() {
                             <figure>
                                 <img src={hobby.image} alt={hobby.title}/>
                             </figure>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <div className="container px-4 mx-auto pb-8">
-                <SectionHeading heading="Cat Tax:"/>
-                <div className="carousel carousel-center bg-neutral rounded-box w-full space-x-4 p-4">
-                    {cats.map((cat, index) => (
-                        <div key={index} className="carousel-item w-1/2">
-                            <img src={cat.image} className="rounded-box" alt="Cat picture"/>
                         </div>
                     ))}
                 </div>
