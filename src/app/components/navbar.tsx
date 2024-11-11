@@ -11,13 +11,12 @@ export function Navbar() {
             </div>
 
             {/*Links */}
-            <div className="btn btn-ghost btn-circle p-2">
+            <a href="https://www.linkedin.com/in/deanlynch97/" target="_blank" className="btn btn-ghost btn-circle p-2">
                 <FaLinkedin className="w-full h-full"/>
-            </div>
-            <div className="btn btn-ghost btn-circle p-2">
+            </a>
+            <a href="https://www.github.com/lynchdean" target="_blank" className="btn btn-ghost btn-circle p-2">
                 <FaGithub className="w-full h-full"/>
-            </div>
-
+            </a>
 
             <div className="flex-none">
                 <ThemeController/>
