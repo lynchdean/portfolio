@@ -1,3 +1,5 @@
+import {FaInfoCircle} from "react-icons/fa";
+
 interface TimelineEntryProps {
     year: string;
     company: string;
@@ -42,7 +44,7 @@ export function TimelineEntry({
             <div className="timeline-end mb-auto pb-4">
                 <div className="collapse collapse-arrow bg-base-200">
                     <input type="checkbox"/>
-                    <div className="collapse-title text-xl text-neutral-400 font-medium">Details</div>
+                    <div className="collapse-title text-xl content-center font-medium"><FaInfoCircle/></div>
                     <div className="collapse-content">
                         <ul className="list-disc ms-6">
                             {description.map((line) => (

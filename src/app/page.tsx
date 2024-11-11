@@ -6,6 +6,7 @@ import {TimelineEntry} from "@/app/components/timeline-entry";
 // Data
 import {hero} from "@/../data/hero.js";
 import {experience} from "@/../data/experience.js";
+import {education} from "@/../data/education.js";
 import {skills} from "@/../data/skills.js";
 import {projects} from "@/../data/projects.js";
 import {hobbies} from "@/../data/hobbies.js";
@@ -26,13 +27,6 @@ export default function Home() {
                                     <h2 className="text-lg md:text-2xl font-bold">{hero.degree}</h2>
                                     <p className="text-md md:text-lg pt-4">{hero.description1}</p>
                                     <p className="text-md md:text-lg font-bold py-4">{hero.description2}</p>
-                                    {/*<div className="grid grid-cols-2 md:grid-cols-4 gap-4">*/}
-                                    {/*    {links.map((link, index) => (*/}
-                                    {/*        <a key={index} href={link.url} target="_blank" className="btn">*/}
-                                    {/*            {link.title}*/}
-                                    {/*        </a>*/}
-                                    {/*    ))}*/}
-                                    {/*</div>*/}
                                 </div>
                             </div>
                         </div>
@@ -56,6 +50,24 @@ export default function Home() {
                         />
                     ))}
                 </ul>
+            </div>
+
+            <div className="container px-4 mx-auto">
+                <SectionHeading heading="Education:"/>
+                <div className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+                    {education.map((entry, index) => (
+                        <TimelineEntry
+                            key={index}
+                            year={entry.year}
+                            company={entry.institution}
+                            title={entry.degree}
+                            location={entry.location}
+                            description={entry.description}
+                            isFirst={index === 0}
+                            isLast={index === education.length - 1}
+                        />
+                    ))}
+                </div>
             </div>
 
             <div className="container px-4 mx-auto pb-8 bg-ne">
