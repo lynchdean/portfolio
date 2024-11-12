@@ -1,9 +1,11 @@
 // Components
+import {Section} from "@/app/components/section";
 import {SkillGrid} from "@/app/components/skill-grid";
 import {ProjectHighlight} from "@/app/components/project-highlight";
 import {ProjectCard} from "@/app/components/project-card";
-import {SectionHeading} from "@/app/components/section-heading";
 import {TimelineEntry} from "@/app/components/timeline-entry";
+import {Hobby} from "@/app/components/hobby";
+
 // Data
 import {hero} from "@/../data/hero.js";
 import {experience} from "@/../data/experience.js";
@@ -35,8 +37,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="container px-4 mx-auto">
-                <SectionHeading heading="Experience:"/>
+            <Section heading={"Experience:"}>
                 <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {experience.map((entry, index) => (
                         <TimelineEntry key={index}
@@ -46,10 +47,9 @@ export default function Home() {
                         />
                     ))}
                 </ul>
-            </div>
+            </Section>
 
-            <div className="container px-4 mx-auto">
-                <SectionHeading heading="Education:"/>
+            <Section heading={"Education:"}>
                 <div className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {education.map((entry, index) => (
                         <TimelineEntry key={index}
@@ -59,46 +59,34 @@ export default function Home() {
                         />
                     ))}
                 </div>
-            </div>
+            </Section>
 
-            <div className="container px-4 mx-auto pb-8 bg-ne">
-                <SectionHeading heading="Skills:"/>
+            <Section heading="Skills:">
                 <div className="rounded-2xl bg-base-200 p-4 pb-8">
                     {skills.map((section, index) => (
                         <SkillGrid key={index} {...section} />
                     ))}
                 </div>
-            </div>
+            </Section>
 
-            <div className="container px-4 mx-auto pb-8">
-                <SectionHeading heading="Projects:"/>
+            <Section heading="Projects:">
                 {projectHighlights.map((highlight, index) => (
                     <ProjectHighlight key={index} {...highlight}/>
                 ))}
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {projects.map((project, index) => (
                         <ProjectCard key={index} {...project}/>
                     ))}
                 </div>
-            </div>
+            </Section>
 
-            <div className="container px-4 mx-auto pb-8">
-                <SectionHeading heading="Hobbies:"/>
+            <Section heading="Hobbies:">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {hobbies.map((hobby, index) => (
-                        <div key={index} className="card bg-base-200 shadow-xl">
-                            <div className="card-body">
-                                <h2 className="card-title">{hobby.title}</h2>
-                                <p>{hobby.description}</p>
-                            </div>
-                            <figure>
-                                <img src={hobby.image} alt={hobby.title}/>
-                            </figure>
-                        </div>
+                        <Hobby key={index} {...hobby} />
                     ))}
                 </div>
-            </div>
+            </Section>
         </div>
     );
 }
