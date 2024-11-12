@@ -14,7 +14,7 @@ interface ProjectHighlightProps {
 export function ProjectHighlight({title, description, tech, image, link, github, bgClass}: ProjectHighlightProps) {
     return (
         <div
-            className={`card lg:card-side ${bgClass} text-white shadow-xl mb-8`}>
+            className={`card lg:card-side bg-base-300 text-base-content ${bgClass} shadow-xl mb-8`}>
             <div className="card-body">
                 <h2 className="card-title text-6xl">{title}</h2>
                 <p className="text-2xl">{description}</p>
@@ -31,7 +31,7 @@ export function ProjectHighlight({title, description, tech, image, link, github,
             <figure>
                 <img
                     src={image}
-                    alt="Logo"
+                    alt={title}
                     className="h:48 w-48 lg:h-64 lg:w-64 p-4"/>
             </figure>
         </div>
