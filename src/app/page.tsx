@@ -1,5 +1,6 @@
 // Components
 import {SkillGrid} from "@/app/components/skill-grid";
+import {ProjectHighlight} from "@/app/components/project-highlight";
 import {ProjectCard} from "@/app/components/project-card";
 import {SectionHeading} from "@/app/components/section-heading";
 import {TimelineEntry} from "@/app/components/timeline-entry";
@@ -10,13 +11,13 @@ import {education} from "@/../data/education.js";
 import {skills} from "@/../data/skills.js";
 import {projects} from "@/../data/projects.js";
 import {hobbies} from "@/../data/hobbies.js";
+import {projectHighlights} from "../../data/projectHighlights";
 
 
 export default function Home() {
     return (
         <div>
             <div className="hero min-h-80 bg-neutral-content">
-
                 <div className="bg-[radial-gradient(circle_at_50%_55%,violet_0%,transparent_40%)]">
                     <div className="bg-[radial-gradient(circle_at_65%_55%,lime_0%,transparent_28%)]">
                         <div className="bg-[radial-gradient(circle_at_58%_40%,cyan_0%,transparent_35%)]">
@@ -81,6 +82,19 @@ export default function Home() {
 
             <div className="container px-4 mx-auto pb-8">
                 <SectionHeading heading="Projects:"/>
+                {projectHighlights.map((highlight, index) => (
+                    <ProjectHighlight
+                        key={index}
+                        title={highlight.title}
+                        description={highlight.description}
+                        tech={highlight.tech}
+                        image={highlight.image}
+                        link={highlight.link}
+                        github={highlight.github}
+                        bgClass={highlight.bgClass}
+                    />
+                ))}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {projects.map((project, index) => (
                         <ProjectCard

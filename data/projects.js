@@ -1,17 +1,5 @@
 export const projects = [
     {
-        title: "pizzapool",
-        github: "lynchdean/pizzapool",
-        desc: ["A carpool-style group ordering web app.", "Used by one of the most popular run clubs in Dublin."],
-        tech: ["Python", "Django"]
-    },
-    {
-        title: "Mild Watch Face",
-        github: "lynchdean/MildWatchFace",
-        desc: ["Garmin watch face for Mild Activity Run CLub."],
-        tech: ["MonkeyC"]
-    },
-    {
         title: "Dean's Simple Watch Face",
         github: "lynchdean/DeansSimpleWatchFace",
         desc: ["A simple data-rich watch face for Garmin devices."],
