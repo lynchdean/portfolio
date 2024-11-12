@@ -39,15 +39,10 @@ export default function Home() {
                 <SectionHeading heading="Experience:"/>
                 <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {experience.map((entry, index) => (
-                        <TimelineEntry
-                            key={index}
-                            year={entry.year}
-                            company={entry.company}
-                            title={entry.title}
-                            location={entry.location}
-                            description={entry.description}
-                            isFirst={index === 0}
-                            isLast={index === experience.length - 1}
+                        <TimelineEntry key={index}
+                                       isFirst={index === 0}
+                                       isLast={index === experience.length - 1}
+                                       {...entry}
                         />
                     ))}
                 </ul>
@@ -57,15 +52,10 @@ export default function Home() {
                 <SectionHeading heading="Education:"/>
                 <div className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {education.map((entry, index) => (
-                        <TimelineEntry
-                            key={index}
-                            year={entry.year}
-                            company={entry.institution}
-                            title={entry.degree}
-                            location={entry.location}
-                            description={entry.description}
-                            isFirst={index === 0}
-                            isLast={index === education.length - 1}
+                        <TimelineEntry key={index}
+                                       isFirst={index === 0}
+                                       isLast={index === education.length - 1}
+                                       {...entry}
                         />
                     ))}
                 </div>
@@ -75,7 +65,7 @@ export default function Home() {
                 <SectionHeading heading="Skills:"/>
                 <div className="rounded-2xl bg-base-200 p-4 pb-8">
                     {skills.map((section, index) => (
-                        <SkillGrid key={index} title={section.title} skills={section.skills}/>
+                        <SkillGrid key={index} {...section} />
                     ))}
                 </div>
             </div>
@@ -83,27 +73,12 @@ export default function Home() {
             <div className="container px-4 mx-auto pb-8">
                 <SectionHeading heading="Projects:"/>
                 {projectHighlights.map((highlight, index) => (
-                    <ProjectHighlight
-                        key={index}
-                        title={highlight.title}
-                        description={highlight.description}
-                        tech={highlight.tech}
-                        image={highlight.image}
-                        link={highlight.link}
-                        github={highlight.github}
-                        bgClass={highlight.bgClass}
-                    />
+                    <ProjectHighlight key={index} {...highlight}/>
                 ))}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {projects.map((project, index) => (
-                        <ProjectCard
-                            key={index}
-                            title={project.title}
-                            github={project.github}
-                            desc={project.desc}
-                            tech={project.tech}
-                        />
+                        <ProjectCard key={index} {...project}/>
                     ))}
                 </div>
             </div>
