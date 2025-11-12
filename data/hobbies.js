@@ -1,7 +1,7 @@
 export const hobbies = [
     {
         title: "Running",
-        description: "Running is currently a big part of my life. I'm a regular at Mild Activity in Dublin and I do a lot of extra training each week. I've ran two marathons so far and looking forward to signing up to one or two more in the next year.",
+        description: "Running is currently a big part of my life. I'm a regular at Mild Activity in Dublin, I do a lot of extra training each week and I'm a qualified coach. I've ran three marathons so far and looking forward to signing up for another in the new year.",
         image: "AF3E25AA-1E81-42F4-832E-24100B4240C2_1_201_a.jpeg"
     },
     {
