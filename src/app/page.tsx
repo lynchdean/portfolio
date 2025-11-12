@@ -10,6 +10,7 @@ import {Hobby} from "@/app/components/hobby";
 import {hero} from "@/../data/hero.js";
 import {experience} from "@/../data/experience.js";
 import {education} from "@/../data/education.js";
+import {leadership} from "@/../data/leadership.js";
 import {skills} from "@/../data/skills.js";
 import {projects} from "@/../data/projects.js";
 import {hobbies} from "@/../data/hobbies.js";
@@ -52,6 +53,18 @@ export default function Home() {
             <Section heading={"Education:"}>
                 <div className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                     {education.map((entry, index) => (
+                        <TimelineEntry key={index}
+                                       isFirst={index === 0}
+                                       isLast={index === education.length - 1}
+                                       {...entry}
+                        />
+                    ))}
+                </div>
+            </Section>
+
+            <Section heading={"Leadership:"}>
+                <div className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+                    {leadership.map((entry, index) => (
                         <TimelineEntry key={index}
                                        isFirst={index === 0}
                                        isLast={index === education.length - 1}
